@@ -11,14 +11,14 @@
     "prettier": "npx prettier --write ."
   },
   "lint-staged": {
-        "src/**/*.{ts,css,html}": [
-            "npm run prettier:check"
-        ]
-    },
+    "src/**/*.{ts,css,html}": [
+      "npm run prettier:check"
+    ]
+  },
   "husky": {
-      "hooks": {
-          "pre-commit": "lint-staged"
-      }
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "private": true,
   "dependencies": {
