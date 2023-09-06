@@ -10,9 +10,4 @@ export class AppComponent {
 
 
 
-
-
-
-
-
 }
