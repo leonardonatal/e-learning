@@ -8,6 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
+    "lint-staged": "lint-staged",
     "prettier:check": "npx prettier --check ."
   },
   "lint-staged": {
