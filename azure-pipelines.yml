@@ -21,5 +21,8 @@ steps:
     npm install -g @angular/cli
     npm install
     ng build --prod
+
+     # Print the contents of the .npmrc file for debugging
+    cat ~/.npmrc
   displayName: 'npm install and build'
 
