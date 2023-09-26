@@ -18,6 +18,7 @@ steps:
 - script: |
     # Set npm authentication for GitHub Packages using the GITHUB_TOKEN
     echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" > ~/.npmrc
+    npm cache clean --force  # Clear npm cache
     npm install -g @angular/cli
     npm install
     ng build --prod
