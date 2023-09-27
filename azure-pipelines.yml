@@ -16,15 +16,9 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    # Set npm authentication for GitHub Packages using the GITHUB_TOKEN
-    echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" > ~/.npmrc
-    npm cache clean --force  # Clear npm cache
-    npm install --registry=https://npm.pkg.github.com/leonardonatal
     npm install -g @angular/cli
     npm install
     ng build --prod
 
-     # Print the contents of the .npmrc file for debugging
-    cat ~/.npmrc
   displayName: 'npm install and build'
 
