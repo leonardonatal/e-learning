@@ -4,9 +4,6 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-variables:
-  GITHUB_TOKEN: $(GITHUB_TOKEN)  # Reference the pipeline variable here
-
 steps:
 - task: NodeTool@0
   inputs:
@@ -16,8 +13,9 @@ steps:
 - script: |
     npm install -g @angular/cli
     npm install
-    # Use the GITHUB_TOKEN variable in your script
-    ng build --prod --token $(GITHUB_TOKEN)
+    # Use the GITHUB_TOKEN variable in your script like this:
+    echo "//npm.pkg.github.com/:_authToken=\${GITHUB_TOKEN}" > ~/.npmrc
+    ng build --prod
   displayName: 'npm install and build'
 
 
