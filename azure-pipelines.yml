@@ -18,6 +18,8 @@ steps:
 - script: |
     # Set npm authentication for GitHub Packages using the GITHUB_TOKEN
     echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" > ~/.npmrc
+    echo "@leonardonatal:registry=https://npm.pkg.github.com" >> ~/.npmrc
+    npm config set @leonardonatal:registry=https://npm.pkg.github.com
     npm cache clean --force  # Clear npm cache
     npm install -g @angular/cli
     npm install
