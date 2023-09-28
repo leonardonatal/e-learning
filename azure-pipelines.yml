@@ -13,9 +13,9 @@ steps:
 - script: |
     npm install -g @angular/cli
     npm install
-    echo "GITHUB_TOKEN is: $GITHUB_TOKEN"  # This will print the value of GITHUB_TOKEN
+    echo "GITHUB_TOKEN is: $(GITHUB_TOKEN)"  # This will print the value of GITHUB_TOKEN
     # Use the GITHUB_TOKEN variable in your script like this:
-    echo "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN" > ~/.npmrc
+    echo "//npm.pkg.github.com/:_authToken=$(GITHUB_TOKEN)" > ~/.npmrc
     ng build --prod
   displayName: 'npm install and build'
 
