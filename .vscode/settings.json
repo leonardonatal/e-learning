@@ -12,5 +12,35 @@
   "[typescript]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode",
       "editor.formatOnSave": true
-  }
+  },
+  "terminal.integrated.profiles.osx": {
+    "ZshWithNvm": {
+      "id": "ZshWithNvm",
+      "path": "zsh",
+      "source": "zsh",
+      "args": [
+        "-c",
+        "[ -f .nvmrc ] && { [ -f ./scripts/loadNvmAndNode.sh ] && ./scripts/loadNvmAndNode.sh || { [ -f /usr/local/bin/loadNvmAndNode.sh ] && loadNvmAndNode.sh || true; }; } || true; exec $SHELL"
+      ],
+      "extensionIdentifier": "osx",
+      "icon": "terminal",
+      "title": "Zsh with NVM"
+    }
+  },
+  "terminal.integrated.profiles.linux": {
+    "BashWithNvm": {
+      "id": "BashWithNvm",
+      "path": "bash",
+      "source": "bash",
+      "args": [
+        "-c",
+        "[ -f .nvmrc ] && { [ -f ./scripts/loadNvmAndNode.sh ] && ./scripts/loadNvmAndNode.sh || { [ -f /usr/local/bin/loadNvmAndNode.sh ] && loadNvmAndNode.sh || true; }; } || true; exec $SHELL"
+      ],
+      "extensionIdentifier": "linux",
+      "icon": "terminal-bash",
+      "title": "Bash with NVM"
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "ZshWithNvm",
+  "terminal.integrated.defaultProfile.linux": "BashWithNvm"
 }
